@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootswatch/dist/simplex/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
