@@ -16,9 +16,14 @@
     </button>
   </nav>
   <div class="container">
-  
-          
-  
+    <app-difficult-game-options></app-difficult-game-options>
+    <div *ngIf="apiService.pokemonSelected">
+      <app-pokemon-to-discovery></app-pokemon-to-discovery>
+    </div>
+    
+
+    <app-discovery-panel></app-discovery-panel>
+
       
   </div>
   

@@ -1,0 +1,14 @@
+.image-principal{
+    width:300px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.colorizable {
+    filter:
+        /* for demonstration purposes; originals not entirely black */
+        contrast(0%)
+        /* black to white */
+     
+}

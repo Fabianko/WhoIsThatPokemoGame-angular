@@ -1,0 +1,42 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">
+    <p>Select Dificult</p>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <button
+          type="button"
+          (click)="changeOption(151)"
+          class="btn btn-{{
+            apiService.defaultOption == 151 ? 'info' : 'outline-info'
+          }}"
+        >
+          EASY
+        </button>
+      </div>
+      <div class="col-md-4 text-center">
+        <button
+          type="button"
+          (click)="changeOption(400)"
+          class="btn btn-{{
+            apiService.defaultOption == 400 ? 'warning' : 'outline-warning'
+          }}"
+        >
+          MEDIUM
+        </button>
+      </div>
+      <div class="col-md-4 text-center">
+        <button
+          type="button"
+          (click)="changeOption(880)"
+          class="btn btn-{{
+            apiService.defaultOption == 880 ? 'primary' : 'outline-primary'
+          }}"
+        >
+          HARD
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

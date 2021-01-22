@@ -1,0 +1,11 @@
+<div class="card border-primary mb-3" *ngIf="apiService.pokemonSelected">
+    <div class="card-body">
+      <div class="row">
+        <img
+          src="{{
+            apiService.pokemonSelected.sprites.other['official-artwork'].front_default
+          }}"
+          class="image-principal colorizable"
+        />
+    </div>
+  </div>
