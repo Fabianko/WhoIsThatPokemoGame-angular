@@ -32,11 +32,12 @@ export class DiscoveryPanelComponent implements OnInit {
 
     }
     else {
-      this.failCount++;
+      this.failCount+=1;
       this.display_not_found = true;
       this.listWrong.push(this.apiPokemonService.pokemonSelected);
       type = 0;
       if (this.failCount ===3) {
+        this.failCount=0;
         this.randomPokemon();
       }
     }
