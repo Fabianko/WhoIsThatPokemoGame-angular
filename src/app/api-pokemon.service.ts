@@ -15,6 +15,7 @@ export class ApiPokemonService {
   listFound: any[] = [];
   listWrong: any[] = [];
   showPokemon: boolean = false;
+  loading: boolean = false;
 
   constructor(private http: HttpClient) {
     ApiPokemonService.instance = ApiPokemonService.instance || this;

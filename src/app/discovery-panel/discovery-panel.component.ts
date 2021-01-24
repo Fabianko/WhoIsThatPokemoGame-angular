@@ -29,7 +29,7 @@ export class DiscoveryPanelComponent implements OnInit {
         this.listFound.push(this.apiPokemonService.pokemonSelected);
         this.randomPokemon();
         type = 1;
-        this.showPokemon();
+
     }
     else {
       this.failCount++;
@@ -37,7 +37,7 @@ export class DiscoveryPanelComponent implements OnInit {
       this.listWrong.push(this.apiPokemonService.pokemonSelected);
       type = 0;
       if (this.failCount ===3) {
-
+        this.randomPokemon();
       }
     }
     this.listLog.push({
@@ -47,19 +47,18 @@ export class DiscoveryPanelComponent implements OnInit {
     this.keyValid ='';
   }
 
-  public showPokemon() {
 
-  }
 
   randomPokemon() {
     this.apiPokemonService.showPokemon = true;
     let randomNumber: number = Math.floor(Math.random() * this.apiPokemonService.defaultOption);
     setTimeout(() => {
+      this.apiPokemonService.loading=true;
       this.apiPokemonService.getPokemon(randomNumber.toString()).subscribe(
         (data) => {
 
           this.apiPokemonService.showPokemon = false;
-
+          this.apiPokemonService.loading=false;
           this.apiPokemonService.pokemonSelected = data;
 
         }
