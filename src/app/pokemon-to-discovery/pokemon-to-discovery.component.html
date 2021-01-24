@@ -1,11 +1,36 @@
 <div class="card border-primary mb-3" *ngIf="apiService.pokemonSelected">
-    <div class="card-body">
-      <div class="row">
+  <div class="card-body">
+    <h1 class="text-center" *ngIf="apiService.showPokemon">
+      {{ apiService.pokemonSelected.name }}
+      <span style="font-size: 20px; color: grey">
+        [{{ apiService.pokemonSelected.id }}]
+      </span>
+    </h1>
+    <div class="row">
+      <ng-container *ngIf="!loading">
         <img
           src="{{
-            apiService.pokemonSelected.sprites.other['official-artwork'].front_default
+            apiService.pokemonSelected.sprites.other['official-artwork']
+              .front_default
           }}"
-          class="image-principal colorizable"
+          class="image-principal {{
+            apiService.showPokemon ? '' : 'colorizable'
+          }}"
         />
+
+        <button class="btn btn-info" (click)="randomPokemon()">
+          <i class="fas fa-fast-forward"></i>
+        </button>
+      </ng-container>
+
+      <ng-container *ngIf="loading" >
+        <div class="col text-center">
+          <i class="fas fa-spinner fa-10x fa-spin" ></i>
+        </div>
+
+          
+
+      </ng-container>
     </div>
   </div>
+</div>

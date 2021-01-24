@@ -12,6 +12,9 @@ export class ApiPokemonService {
   static instance: ApiPokemonService;
   public levelOptions = [151,400,880];
   public defaultOption = 151;
+  listFound: any[] = [];
+  listWrong: any[] = [];
+  showPokemon: boolean = false;
 
   constructor(private http: HttpClient) {
     ApiPokemonService.instance = ApiPokemonService.instance || this;
@@ -34,6 +37,18 @@ export class ApiPokemonService {
       this.pokemonSelectedChanged.emit(true);
     }
       , 0)
+  }
+
+  validPokemon(keyValid){
+    if (
+      keyValid === this.pokemonSelected.name || 
+      keyValid === this.pokemonSelected.id.toString()) {
+        console.log(this.pokemonSelected);
+        this.listFound.push(this.pokemonSelected);
+    }
+    else {
+      this.listWrong.push(this.pokemonSelected);
+    }
   }
 
 }
