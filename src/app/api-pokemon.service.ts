@@ -10,7 +10,7 @@ export class ApiPokemonService {
   private _pokemonSelected;
   @Output() pokemonSelectedChanged: EventEmitter<any> = new EventEmitter();
   static instance: ApiPokemonService;
-  public levelOptions = [151,400,880];
+  public levelOptions = [151, 400, 880];
   public defaultOption = 151;
   listFound: any[] = [];
   listWrong: any[] = [];
@@ -40,12 +40,12 @@ export class ApiPokemonService {
       , 0)
   }
 
-  validPokemon(keyValid){
+  validPokemon(keyValid) {
     if (
-      keyValid === this.pokemonSelected.name || 
+      keyValid === this.pokemonSelected.name ||
       keyValid === this.pokemonSelected.id.toString()) {
-        console.log(this.pokemonSelected);
-        this.listFound.push(this.pokemonSelected);
+      console.log(this.pokemonSelected);
+      this.listFound.push(this.pokemonSelected);
     }
     else {
       this.listWrong.push(this.pokemonSelected);

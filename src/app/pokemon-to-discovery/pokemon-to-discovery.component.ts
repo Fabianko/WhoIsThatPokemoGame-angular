@@ -17,12 +17,12 @@ export class PokemonToDiscoveryComponent implements OnInit {
     this.apiService.showPokemon = true;
     let randomNumber: number = Math.floor(Math.random() * this.apiService.defaultOption);
     setTimeout(() => {
-      this.apiService.loading=true;
+      this.apiService.loading = true;
       this.apiService.getPokemon(randomNumber.toString()).subscribe(
         (data) => {
 
           this.apiService.showPokemon = false;
-          this.apiService.loading=false;
+          this.apiService.loading = false;
           this.apiService.pokemonSelected = data;
 
         }
